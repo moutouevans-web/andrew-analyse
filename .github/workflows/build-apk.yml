@@ -1,4 +1,3 @@
-
 name: Build Andrew Analyse APK
 
 on:
@@ -20,6 +19,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+
+      - name: Generate Android project files
+        working-directory: mobile
+        run: flutter create --platforms=android --project-name=andrew_analyse .
 
       - name: Get Flutter dependencies
         working-directory: mobile
